@@ -1,0 +1,16 @@
+  private void calculateAndDrawPixel(java.awt.Graphics g, int y);
+     0  sipush 10000
+     3  iload_2 [y]
+     4  iload_2 [y]
+     5  imul
+     6  isub
+     7  i2d
+     8  invokestatic java.lang.Math.sqrt(double) : double [32]
+    11  d2i
+    12  istore_3 [x]
+    13  aload_0 [this]
+    14  iload_3 [x]
+    15  iload_2 [y]
+    16  aload_1 [g]
+    17  invokespecial Circle.draw8Pixels(int, int, java.awt.Graphics) : void [38]
+    20  return
