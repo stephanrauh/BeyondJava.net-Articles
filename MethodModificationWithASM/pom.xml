@@ -2,9 +2,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.beyondjava.demos.bytecode</groupId>
-  <artifactId>Circle</artifactId>
+  <artifactId>MethodModificationWithASM</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Circle</name>
+  <name>MethodModificationWithASM</name>
   <description>This demo shows how to create and run byte code in a Java program.
 </description>
   <dependencies>
