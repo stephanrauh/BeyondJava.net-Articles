@@ -1,0 +1,61 @@
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:jsf="http://xmlns.jcp.org/jsf"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:ng="http://xmlns.jcp.org/jsf/passthrough"
+  xmlns:b="http://bootsfaces.net/ui">
+  <head>
+     <h:outputScript library="smartTable" name="smartTable.js" target="body"></h:outputScript>
+  </head>
+  <body ng-controller="AutoController" ng-app="AutoApp" angularJSFile="cars.js" addLabels="false">
+    <container>
+     <form>
+        <row>
+          <column span="12">
+            <ngsync value="{{carPool}}" direction="serverToClient" />
+            <table st-table="carPool.cars" class="table table-striped">
+               <thead>
+                 <tr>
+                    <th st-sort="hersteller">Hersteller</th>
+                    <th st-sort="typ">Type</th>
+                    <th st-sort="baujahr">Baujahr</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr ng-repeat="trow in carPool.cars">
+                   <td>{{trow.hersteller}}</td>
+                   <td>{{trow.typ}}</td>
+                   <td>{{trow.baujahr}}</td>
+                 </tr>
+               </tbody>
+               <tfoot>
+                 <tr>
+                   <td colspan="5" class="text-center">
+                     <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                   </td>
+                 </tr>
+               </tfoot>
+             </table>
+          </column>
+        </row>       
+        <row>
+          <column span="4">
+             <b:inputText value="{{carPool.hersteller}}" label="Hersteller" />
+          </column>        
+          <column span="4">     
+             <b:inputText value="{{carPool.typ}}" label="Typ"/>
+          </column>        
+          <column span="4">     
+             <b:inputText value="{{carPool.baujahr}}" label="Baujahr" />
+          </column>
+        </row>       
+        <row>
+          <column span="12">
+            <b:commandButton ng-click="neuesFahrzeug()" onclick="return false;" value="hinzufügen" />
+          </column>
+         </row>       
+       </form>
+     </container>
+  </body>
+</f:view>
