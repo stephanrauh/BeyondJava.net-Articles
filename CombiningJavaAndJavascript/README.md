@@ -6,7 +6,7 @@ This project contains three examples:
 <li>A similar example using AngularFaces.</li>
 </ul>
 
-Run this as a Tomcat application. The URL to start typically is http://localhost:8080/CombiningJavaAndJavascript.
+Run this as a Tomcat application. The URL to start typically is http://localhost:8080/CombiningJavaAndJavascript/index.jsf.
 
 Tested on:
 <ul>
