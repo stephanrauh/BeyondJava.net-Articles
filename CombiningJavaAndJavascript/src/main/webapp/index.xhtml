@@ -11,28 +11,18 @@
 </h:head>
 <h:body>
 	<b:container>
-		<h:form>
-			<b:row>
-				<b:column col-lg="6" offset-lg="3">
-					<b:panel look="success" title="BootsFaces Combobox demo">
-						<b:selectOneMenu value="#{themeSelectorBean.theme}" label="Select a theme">
-							<f:selectItems value="#{themeSelectorBean.themes}" var="wordVar"
-								itemLabel="#{wordVar}" itemValue="#{wordVar}" />
-						</b:selectOneMenu>
-					</b:panel>
-				</b:column>
-			</b:row>
-			<b:row>
-				<b:column col-lg="6" offset-lg="3">
-                   Your current selection: #{themeSelectorBean.theme}.
-                </b:column>
-			</b:row>
-			<b:row>
-				<b:column col-lg="6" offset-lg="3">
-					<b:commandButton value="Update selection" />
-				</b:column>
-			</b:row>
-		</h:form>
+# Combining Java and JavaScript
+This project contains three examples:
+<ul>
+<li><a target="#" href="clientSideTable.html">A simple jQuery data table widget that's rendered on the client side.</a></li>
+<li><a target="#" href="AngularJSTable.html">The same example using AngularJS.</a></li>
+<li><a target="#" href="angularFaces.xhtml">A similar example using AngularFaces.</a></li>
+</ul>
+
+Tested on:
+<ul>
+<li>Tomcat 8.0 / Oracle Mojarra 2.2.10</li>
+</ul>
 	</b:container>
 </h:body>
 </html>

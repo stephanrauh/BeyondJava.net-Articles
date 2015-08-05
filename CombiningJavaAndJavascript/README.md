@@ -1,7 +1,8 @@
 # Combining Java and JavaScript
-This project contains two examples:
+This project contains three examples:
 <ul>
-<li>A simple data table widget that's rendered on the client side.</li>
+<li>A simple jQuery data table widget that's rendered on the client side.</li>
+<li>The same example using AngularJS.</li>
 <li>A similar example using AngularFaces.</li>
 </ul>
 
