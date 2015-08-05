@@ -1,29 +1,28 @@
-1 <html>
- 2  <head>
- 3    <script src=
- 5"https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js">
- 6    </script>
- 7    <script src="AngularJSTable.js"></script>
- 8  </head>
- 9  <body ng-app="AutoApp" ng-controller="AutoController as autos">
-10    <table cellpadding="0" cellspacing="0" border="1">
-11      <thead>
-12        <tr>
-13          <td>Hersteller</td>
-14          <td>Typ</td>
-15          <td>Baujahr</td>
-16        </tr>
-17      </thead>
-18      <tr ng-repeat="fahrzeug in autos.dataSet">
-19        <td>{{fahrzeug.hersteller}}</td>
-20        <td>{{fahrzeug.typ}}</td>
-21        <td>{{fahrzeug.baujahr}}</td>
-22      </tr>
-23    </table>
-24    <br />
-25      Hersteller: <input type="text" ng-model="autos.hersteller"><br />
-26      Typ:        <input type="text" ng-model="autos.typ"> <br />
-27      Baujahr:    <input type="number" ng-model="autos.baujahr"> <br /> 
-28      <button ng-click="autos.neuesFahrzeug()">hinzufügen</button>
-29  </body>
-30</html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js">
+    </script>
+    <script src="AngularJSTable.js"></script>
+  </head>
+  <body ng-app="AutoApp" ng-controller="AutoController as autos">
+   <table cellpadding="0" cellspacing="0" border="1">
+      <thead>
+        <tr>
+          <td>Hersteller</td>
+          <td>Typ</td>
+          <td>Baujahr</td>
+        </tr>
+      </thead>
+      <tr ng-repeat="fahrzeug in autos.dataSet">
+        <td>{{fahrzeug.hersteller}}</td>
+        <td>{{fahrzeug.typ}}</td>
+        <td>{{fahrzeug.baujahr}}</td>
+      </tr>
+    </table>
+    <br />
+      Hersteller: <input type="text" ng-model="autos.hersteller"><br />
+      Typ:        <input type="text" ng-model="autos.typ"> <br />
+      Baujahr:    <input type="number" ng-model="autos.baujahr"> <br /> 
+      <button ng-click="autos.neuesFahrzeug()">hinzufügen</button>
+  </body>
+</html>
