@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:b="http://bootsfaces.net/ui"
+  xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+</h:head>
+<h:body style="padding-top:75px">
+  <b:container id="content">
+    <b:row>
+      <b:column span="12">
+        <b:panel title="Action, ActionListener and Listener">
+          <h:form>
+            <h:commandButton value="Click me!"
+              actionListener="#{AJAXBean.standardJSFActionListener}"
+              action="#{AJAXBean.standardJSFAction}">
+              <f:ajax execute="@this" render="@form :messages"
+                listener="#{AJAXBean.facetListener}" />
+              <f:ajax 
+                listener="#{AJAXBean.facetListener2}" />
+            </h:commandButton>
+          </h:form>
+        </b:panel>
+        <b:well id="messages">
+	       Last action:
+	       <ul>
+            <ui:repeat var="message" value="#{AJAXBean.messages}">
+              <li>#{message}</li>
+            </ui:repeat>
+          </ul>
+        </b:well>
+      </b:column>
+    </b:row>
+  </b:container>
+</h:body>
+</html>

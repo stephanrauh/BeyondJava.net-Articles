@@ -1,0 +1,52 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:form>
+		<b:row>
+			<b:column col-sm="6">
+				<b:panel look="primary" title="AJAXified Combobox">
+					<ui:remove>
+						<!-- onmousemove="console.log('mouse move')ajax:AJAXBean.onMouseMove();"  -->
+					</ui:remove>
+
+					<b:selectOneMenu value="#{AJAXBean.brand}" id="brandID"
+						onchange="console.log('before onChange');ajax:AJAXBean.onChange();javascript:console.log('afterOnChange')"
+						onblur="console.log('blur');ajax:AJAXBean.onBlur()"
+						onfocus="console.log('focus');ajax:AJAXBean.onFocus()"
+						onclick="console.log('click');ajax:AJAXBean.onClick()"
+						ondblclick="console.log('dblclick');ajax:AJAXBean.onDblClick()"
+						onkeydown="console.log('keyd own');ajax:AJAXBean.onKeyDown()"
+						onkeyup="console.log('key up');ajax:AJAXBean.onKeyUp()"
+						onkeypress="console.log('key press');ajax:AJAXBean.onKeyPress()"
+						onmousedown="console.log('mouse down');ajax:AJAXBean.onMouseDown();"
+						onmouseout="console.log('mouse out');ajax:AJAXBean.onMouseOut();"
+						onmouseup="console.log('mouse up');ajax:AJAXBean.onMouseUp();"
+						onmouseselect="console.log('mouse select');ajax:AJAXBean.onMouseSelect();"
+						onvaluechange="console.log('valueChange);ajax:AJAXBean.onValueChange()"
+						onselect="console.log('select');ajax:AJAXBean.onSelect()"
+						update="messages">
+
+
+						<f:selectItem itemLabel="(Please select)" itemValue="0" />
+						<f:selectItem itemLabel="Fiat" itemValue="1" />
+						<f:selectItem itemLabel="Honda" itemValue="2" />
+						<f:selectItem itemLabel="Opel" itemValue="3" />
+					</b:selectOneMenu>
+				</b:panel>
+			</b:column>
+			<b:column col-sm="6">
+				<b:well id="messages">
+	                Last action:
+	                <ul>
+					  <ui:repeat var="message" value="#{AJAXBean.messages}">
+						<li>#{message}</li>
+					  </ui:repeat>
+					</ul>
+				</b:well>
+			</b:column>
+		</b:row>
+	</h:form>
+</ui:fragment>

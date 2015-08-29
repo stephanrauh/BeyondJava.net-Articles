@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.oressg/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:b="http://bootsfaces.net/ui"
+  xmlns:f="http://java.sun.com/jsf/core" locale="en">
+
+<h:head>
+</h:head>
+<h:body style="padding-top:75px">
+  <b:container id="content">
+    <b:row>
+      <b:column span="12">
+        <b:panel title="Wrapping f:ajax around JSF components">
+          <h:form>
+            <b:panelGrid colSpans="3,2,2,5">
+              <f:ajax execute="@form" render="@form"
+                listener="#{AJAXBean.facetListener}">
+                <h:outputLabel for="ageID"
+                  value="Enter your age (18-65)"/>
+                <h:inputText value="#{AJAXBean.age}" id="ageID">
+                  <f:validateLongRange minimum="18" maximum="65" />
+                </h:inputText>
+                <h:commandButton value="validate age" />
+                <h:message for="ageID" id="ageMessage"/>
+
+                <h:outputLabel for="nameID"
+                  value="Enter your first name (3 -20 letters)"/>
+                <h:inputText value="#{AJAXBean.name}" id="nameID"
+                  required="true">
+                  <f:validateLength minimum="3" maximum="20" />
+                </h:inputText>
+                <h:commandButton value="validate name" />
+                <h:message for="nameID" id="nameMessage"/>
+              </f:ajax>
+            </b:panelGrid>
+            <h:commandButton value="validate both">
+              <f:ajax execute="@form" render="@form"
+                listener="#{AJAXBean.facetListener}" />
+            </h:commandButton>
+            <h:messages id="messages" />
+          </h:form>
+        </b:panel>
+
+      </b:column>
+    </b:row>
+  </b:container>
+</h:body>
+</html>
