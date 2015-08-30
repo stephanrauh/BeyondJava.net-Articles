@@ -33,6 +33,29 @@ public class AJAXBean {
 	private int age;
 	
 	private String name;
+	
+	private boolean buttonRed=false;
+	
+	public void mouseOverListener(javax.faces.event.AjaxBehaviorEvent event) throws javax.faces.event.AbortProcessingException {
+		report("f:ajax mouseOver listener called");
+		setButtonRed(true);
+	}
+
+	
+	public void mouseOutListener(javax.faces.event.AjaxBehaviorEvent event) throws javax.faces.event.AbortProcessingException {
+		report("f:ajax mouseOut listener called");
+		setButtonRed(false);
+	}
+
+	public void keyDownListener() throws javax.faces.event.AbortProcessingException {
+		report("f:ajax keydown listener called");
+		setButtonRed(false);
+	}
+	public void keyDownListener(javax.faces.event.AjaxBehaviorEvent event) throws javax.faces.event.AbortProcessingException {
+		report("f:ajax keydown listener called");
+		setButtonRed(false);
+	}
+
 
 	public boolean isSpinning() {
 		return spinning;
@@ -291,5 +314,15 @@ public class AJAXBean {
 	public void setName(String name) {
 		this.name = name;
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("You've successfully entered the name."));
+	}
+
+
+	public boolean isButtonRed() {
+		return buttonRed;
+	}
+
+
+	public void setButtonRed(boolean buttonRed) {
+		this.buttonRed = buttonRed;
 	}
 }

@@ -2,15 +2,78 @@
   xmlns:h="http://java.sun.com/jsf/html"
   xmlns:ui="http://java.sun.com/jsf/facelets"
   xmlns:b="http://bootsfaces.net/ui"
-  xmlns:f="http://java.sun.com/jsf/core">
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:prime="http://primefaces.org/ui">
 
 <h:head>
 </h:head>
 <h:body style="padding-top:75px">
   <b:container id="content">
-    <b:panel title="Landing page">
-      You've reached this page because you've clicked a button.
-    </b:panel>
+    <b:row>
+      <b:column span="12">
+        <b:panel
+          title="Navigation with an AJAX command button and mouse-over effects">
+          <h:form>
+            <h:commandButton value="Start navigation" style="#{AJAXBean.buttonRed?'background-color:red':''}"
+              action="landingPage.jsf">
+              <f:ajax execute="@this" render="@form" />
+              <f:ajax event="mouseover" execute="@this" render="@this :messages"
+                listener="#{AJAXBean.mouseOverListener}" />
+              <f:ajax event="mouseout" execute="@this" render="@this :messages"
+                listener="#{AJAXBean.mouseOutListener}" />
+            </h:commandButton>
+          </h:form>
+        </b:panel>
+      </b:column>
+    </b:row>
+    <b:row>
+      <b:column span="12">
+        <b:panel
+          title="PrimeFaces corner cases: multiple events">
+          <h:form>
+            <prime:inputText value="#{AJAXBean.name}" style="#{AJAXBean.buttonRed?'color:red':''}"
+              >
+              <f:ajax event="mouseover" execute="@this" render="@this :messages"
+                listener="#{AJAXBean.mouseOverListener}" />
+              <prime:ajax event="mouseout" process="@this" update="@this :messages"
+                listener="#{AJAXBean.mouseOutListener}" />
+            </prime:inputText>
+          </h:form>
+        </b:panel>
+      </b:column>
+    </b:row>
+    <b:row>
+      <b:column span="12">
+        <b:panel
+          title="BootsFaces corner cases: multiple events">
+          <h:form>
+            <b:inputText value="#{AJAXBean.name}" style="#{AJAXBean.buttonRed?'background-color:red':''}"
+              onkeydown="ajax:AJAXBean.keyDownListener()" update=":messages">
+              <f:ajax event="focus" 
+                listener="#{AJAXBean.mouseOverListener}" />
+              <f:ajax event="blur" execute="@this" render=":messages"
+                listener="#{AJAXBean.mouseOutListener}" />
+            </b:inputText>
+            <br />
+            <b:inputText value="#{AJAXBean.age}" style="#{AJAXBean.buttonRed?'background-color:red':''}"
+              >
+              <f:ajax event="keydown" 
+                listener="#{AJAXBean.keyDownListener}" execute="@all" render=":messages" />
+              <f:ajax event="blur" execute="@this" render=":messages"
+                listener="#{AJAXBean.mouseOutListener}" />
+            </b:inputText>
+          </h:form>
+        </b:panel>
+      </b:column>
+    </b:row>
+    <b:well id="messages">
+         Last action:
+         <ul>
+        <ui:repeat var="message" value="#{AJAXBean.messages}">
+          <li>#{message}</li>
+        </ui:repeat>
+      </ul>
+    </b:well>
   </b:container>
 </h:body>
 </html>
