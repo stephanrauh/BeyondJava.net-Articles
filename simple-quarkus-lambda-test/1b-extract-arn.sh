@@ -1,0 +1,1 @@
+LAMBDA_ROLE_ARN=$(grep -E -o '(arn:aws:iam::([^"])+)' < result.json)

@@ -1,0 +1,1 @@
+sam local invoke --template sam.jvm.yaml --event payload.json
