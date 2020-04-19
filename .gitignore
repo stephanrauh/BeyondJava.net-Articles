@@ -10,3 +10,4 @@ target
 .project
 hs_err_pid*
 .settings
+*.DS_Store
