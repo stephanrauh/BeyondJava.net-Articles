@@ -1,7 +1,7 @@
 openssl base64 -out encoded-payload.json -in payload.json
 
 . 1b-extract-arn.sh
-FUNCTION_NAME=simple-quarkus-lambda-testNativeFunction
+FUNCTION_NAME=simple-quarkus-lambda-test-native-function
 LAMBDA_META="--environment Variables={DISABLE_SIGNAL_HANDLERS=true}"
 
 
