@@ -1,0 +1,15 @@
+
+== Rhino ==
+Run #1: 1224 ms
+Run #2: 750 ms
+Run #10: 389 ms
+Run #20: 388 ms
+Run #30: 380 ms
+
+== Nashorn ==
+Warning: Nashorn engine is planned to be removed from a future JDK release
+Run #1: 4904 ms
+Run #2: 1811 ms
+Run #10: 1757 ms
+Run #20: 1772 ms
+Run #30: 1685 ms
