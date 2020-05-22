@@ -1,0 +1,32 @@
+AdoptOpenJDK 11.0.5:
+openjdk version "11.0.5" 2019-10-15
+OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.5+10)
+OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.5+10, mixed mode)
+Test code: 89475 bytes.
+
+== Truffle ==
+Truffle is only available in the GraalVM.
+== Rhino ==
+#1:     1365 ms
+#2:     650 ms
+#10:    446 ms
+#20:    390 ms
+#50:    400 ms
+#100:   386 ms
+#150:   400 ms
+#200:   388 ms
+#250:   375 ms
+#300:   375 ms
+
+== Nashorn ==
+Warning: Nashorn engine is planned to be removed from a future JDK release
+#1:     5194 ms
+#2:     1601 ms
+#10:    285 ms
+#20:    216 ms
+#50:    71 ms
+#100:   118 ms
+#150:   64 ms
+#200:   64 ms
+#250:   86 ms
+#300:   65 ms

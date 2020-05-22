@@ -31,8 +31,8 @@ public class Speedtest {
                 tree = context.evaluateString(scope, "esprima.parse($code)", source, line, null);
                 tokens = context.evaluateString(scope, "esprima.tokenize($code)", source, line, null);
                 long stop = System.nanoTime();
-                if (i <= 3 || i%10==0) {
-                    System.out.println("Run #" + i + ": " + Math.round((stop - start) / 1e6) + " ms");
+                if (i <= 2 || (i % 10 == 0 && i < 30) || (i % 50 == 0)) {
+                    System.out.println("#" + i + ":\t" + Math.round((stop - start) / 1e6) + " ms");
                 }
             }
         } finally {
@@ -56,8 +56,8 @@ public class Speedtest {
             tree = inv.invokeMethod(esprima, "parse", code);
             tokens = inv.invokeMethod(esprima, "tokenize", code);
             long stop = System.nanoTime();
-            if (i <= 3 || i%10==0) {
-                System.out.println("Run #" + i + ": " + Math.round((stop - start) / 1e6) + " ms");
+            if (i <= 2 || (i % 10 == 0 && i < 30) || (i % 50 == 0)) {
+                System.out.println("#" + i + ":\t" + Math.round((stop - start) / 1e6) + " ms");
             }
         }
     }
@@ -68,13 +68,12 @@ public class Speedtest {
             Value jsProgram = context.eval("js", parser);
             for (int i = 1; i <= RUNS; ++i) {
                 long start = System.nanoTime();
-
                 Value esprima = jsBindings.getMember("esprima");
                 Value tree = esprima.invokeMember("parse", parser);
                 Value tokens = esprima.invokeMember("tokenize", parser);
                 long stop = System.nanoTime();
                 if (i <= 2 || (i % 10 == 0 && i < 30) || (i % 50 == 0)) {
-                    System.out.println("Run #" + i + ": " + Math.round((stop - start) / 1e6) + " ms");
+                    System.out.println("#" + i + ":\t" + Math.round((stop - start) / 1e6) + " ms");
                 }
             }
         }
@@ -86,8 +85,13 @@ public class Speedtest {
             String code = readFile("src/main/resources/jquery-3.5.1.min.js");
             System.out.println("Test code: " + code.length() + " bytes.");
             System.out.println();
-            System.out.println("== GraalVM ==");
-            graal(parser, code);
+            System.out.println("== Truffle ==");
+            try {
+                Class.forName("org.graalvm.polyglot.Context");
+                graal(parser, code);
+            } catch (Exception e) {
+                System.out.println("Truffle is only available in the GraalVM.");
+            }
 
             System.out.println("== Rhino ==");
             rhino(parser, code);

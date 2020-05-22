@@ -1,0 +1,38 @@
+GraalVM 20.1.0, Java 11.0.7:
+Test code: 89475 bytes.
+
+== Truffle ==
+#1:     2276 ms
+#2:     872 ms
+#10:    398 ms
+#20:    161 ms
+#50:    115 ms
+#100:   63 ms
+#150:   44 ms
+#200:   43 ms
+#250:   42 ms
+#300:   43 ms
+== Rhino ==
+#1:     1595 ms
+#2:     803 ms
+#10:    403 ms
+#20:    366 ms
+#50:    344 ms
+#100:   358 ms
+#150:   344 ms
+#200:   340 ms
+#250:   344 ms
+#300:   354 ms
+
+== Nashorn ==
+Warning: Nashorn engine is planned to be removed from a future JDK release
+#1:     4170 ms
+#2:     1220 ms
+#10:    238 ms
+#20:    144 ms
+#50:    107 ms
+#100:   101 ms
+#150:   100 ms
+#200:   99 ms
+#250:   101 ms
+#300:   142 ms

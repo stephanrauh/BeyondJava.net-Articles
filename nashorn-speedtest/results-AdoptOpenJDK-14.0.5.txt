@@ -1,0 +1,32 @@
+AdoptOpenJDK 14.0.5:
+openjdk version "14.0.1" 2020-04-14
+OpenJDK Runtime Environment AdoptOpenJDK (build 14.0.1+7)
+OpenJDK 64-Bit Server VM AdoptOpenJDK (build 14.0.1+7, mixed mode, sharing)
+Test code: 89475 bytes.
+
+== Truffle ==
+Truffle is only available in the GraalVM.
+== Rhino ==
+#1:     1264 ms
+#2:     624 ms
+#10:    412 ms
+#20:    381 ms
+#50:    396 ms
+#100:   392 ms
+#150:   398 ms
+#200:   384 ms
+#250:   376 ms
+#300:   381 ms
+
+== Nashorn ==
+Warning: Nashorn engine is planned to be removed from a future JDK release
+#1:     3155 ms
+#2:     1516 ms
+#10:    302 ms
+#20:    178 ms
+#50:    114 ms
+#100:   72 ms
+#150:   71 ms
+#200:   71 ms
+#250:   70 ms
+#300:   87 ms
