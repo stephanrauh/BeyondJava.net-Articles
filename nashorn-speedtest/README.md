@@ -18,7 +18,7 @@ Of course, that's a far cry from being a scientific benchmark, but it has severa
 * it uses non-linear code execution (recursive-descent parsing).
 
 ## My results
-On GraalVM 20.1.0, Truffle is the fastest engine, followed by Nashorn and Rhino. To my surprise, it's even faster than native node.js 12.4.1, at least in the long run. There's a severe cold start penalty. It takes GraalVM more than a hundred iterations to overtake node.js. The additional overhead of the Fukamara projection shows.
+On GraalVM 20.1.0, Truffle is the fastest engine, followed by Nashorn and Rhino. To my surprise, it's even faster than native node.js 12.4.1, at least in the long run. There's a severe cold start penalty. It takes GraalVM more than a hundred iterations to overtake node.js. The additional overhead of the [Futamura projection](https://www.beyondjava.net/truffle-compiler-compiler) shows.
 
 | iteration | Truffle | Nashorn |   Rhino | native node.js |
 | --------: | ------: | ------: | ------: | -------------: |
