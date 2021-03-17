@@ -83,7 +83,6 @@ public class Speedtest {
         try {
             String parser = readFile("src/main/resources/esprima.js");
             String code = readFile("src/main/resources/jquery-3.5.1.min.js");
-            System.out.println("Test code: " + code.length() + " bytes.");
             System.out.println();
             System.out.println("== Truffle ==");
             try {

@@ -1,5 +1,4 @@
 GraalVM 20.1.0, Java 11.0.7:
-Test code: 89475 bytes.
 
 == Truffle ==
 #1:     2276 ms
