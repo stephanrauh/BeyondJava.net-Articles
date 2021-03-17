@@ -1,8 +1,6 @@
 AdoptOpenJDK 11.0.5:
 openjdk version "11.0.5" 2019-10-15
 OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.5+10)
-OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.5+10, mixed mode)
-
 == Truffle ==
 Truffle is only available in the GraalVM.
 == Rhino ==

@@ -1,0 +1,29 @@
+Eclipse OpenJ9 VM AdoptOpenJDK (build openj9-0.24.0, JRE 11 Mac OS X amd64-64-Bit Compressed References 20210120_897 (JIT enabled, AOT enabled)
+
+
+== Truffle ==
+Truffle is only available in the GraalVM.
+== Rhino ==
+#1:	1565 ms
+#2:	1064 ms
+#10:	618 ms
+#20:	541 ms
+#50:	528 ms
+#100:	510 ms
+#150:	523 ms
+#200:	510 ms
+#250:	513 ms
+#300:	529 ms
+
+== Nashorn ==
+#1:	6937 ms
+#2:	1310 ms
+#10:	443 ms
+#20:	383 ms
+#50:	322 ms
+#100:	308 ms
+#150:	311 ms
+#200:	252 ms
+#250:	253 ms
+#300:	289 ms
+

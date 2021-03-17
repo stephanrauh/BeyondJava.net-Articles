@@ -11,3 +11,4 @@ target
 hs_err_pid*
 .settings
 *.DS_Store
+**/*.DS_Store

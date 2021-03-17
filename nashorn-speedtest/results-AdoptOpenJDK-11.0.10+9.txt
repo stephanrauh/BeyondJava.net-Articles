@@ -1,0 +1,29 @@
+AdoptOpenJDK 11.0.10+9:
+openjdk version "11.0.10" 2021-01-19
+
+== Truffle ==
+Truffle is only available in the GraalVM.
+== Rhino ==
+#1:	1332 ms
+#2:	605 ms
+#10:	420 ms
+#20:	378 ms
+#50:	376 ms
+#100:	374 ms
+#150:	376 ms
+#200:	373 ms
+#250:	386 ms
+#300:	373 ms
+
+== Nashorn ==
+#1:	4843 ms
+#2:	1856 ms
+#10:	242 ms
+#20:	82 ms
+#50:	70 ms
+#100:	96 ms
+#150:	109 ms
+#200:	103 ms
+#250:	61 ms
+#300:	65 ms
+

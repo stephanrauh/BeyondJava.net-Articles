@@ -1,0 +1,18 @@
+AdoptOpenJDK 16:
+openjdk version "16" 2021-03-16
+OpenJDK Runtime Environment AdoptOpenJDK (build 16+36)
+== Truffle ==
+Truffle is only available in the GraalVM.
+== Rhino ==
+#1:	1189 ms
+#2:	573 ms
+#10:	416 ms
+#20:	396 ms
+#50:	405 ms
+#100:	385 ms
+#150:	399 ms
+#200:	383 ms
+#250:	397 ms
+#300:	392 ms
+
+== Nashorn ==

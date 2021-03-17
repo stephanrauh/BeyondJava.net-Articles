@@ -1,4 +1,5 @@
-GraalVM 20.1.0, Java 11.0.7:
+GraalVM CE 20.1.0, Java 11.0.7:
+
 
 == Truffle ==
 #1:     2276 ms

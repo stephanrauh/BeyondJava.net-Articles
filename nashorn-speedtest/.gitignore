@@ -33,3 +33,6 @@ pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
 release.properties
+
+# GraalVM Enterprise benchmark results
+*-EE*.txt
